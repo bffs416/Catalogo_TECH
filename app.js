@@ -312,6 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function getBadgeClass(badge) {
     if (!badge) return 'badge-default';
     const b = badge.toLowerCase();
+    if (b.includes('vendido') || b.includes('agotado')) return 'badge-sold';
     if (b.includes('destacado')) return 'badge-featured';
     if (b.includes('oferta')) return 'badge-offer';
     if (b.includes('nuevo')) return 'badge-new';

@@ -610,6 +610,7 @@ h1, h2, h3, h4, h5 {
 .badge-featured { background: #fef08a; color: #111; }
 .badge-offer { background: #fecaca; color: #111; }
 .badge-new { background: #e0f2fe; color: #111; }
+.badge-sold { background: #ef4444; color: #ffffff; border-color: #111111; }
 .badge-default { background: #ffffff; color: #111; }
 
 .photo-count-pill {
