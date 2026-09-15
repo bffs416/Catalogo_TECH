@@ -163,34 +163,34 @@ const PRODUCTS_DATA = [
     ]
   },
   {
-    id: "phone-nexus-ultra",
-    name: "Smartphone Nexus Horizon 5G Ultra",
-    category: "smartphones",
-    categoryLabel: "Smartphones 5G",
-    price: 989.00,
-    originalPrice: 1120.00,
-    badge: "Super Oferta",
-    stock: "Pocas Unidades",
-    sku: "NX-HZN-5G",
-    rating: 4.8,
-    reviewsCount: 89,
-    shortSpecs: ["Cámara 200MP Leica", "Snapdragon 8 Gen 3", "512GB UFS 4.0", "120Hz AMOLED"],
-    description: "Fotografía y velocidad sin precedentes. Sensor Leica de 200 megapíxeles, pantalla curva Dynamic AMOLED de 6.82 pulgadas y batería para 2 días.",
+    id: "laptop-lenovo-g40-45",
+    name: "Portátil Lenovo G40-45 AMD A4 Pantalla 14.0\" HD + Cargador Original",
+    category: "laptops",
+    categoryLabel: "Laptops & Computadores",
+    price: 165.00,
+    originalPrice: 220.00,
+    badge: "Destacado",
+    stock: "En Stock (Envío Inmediato)",
+    sku: "LNV-G40-45-AMD",
+    rating: 5.0,
+    reviewsCount: 36,
+    shortSpecs: ["AMD A4 APU Dual-Core", "Pantalla 14.0\" HD LED", "Cargador Lenovo 20V 3.25A", "Teclado AccuType Lenovo"],
+    description: "Computador portátil Lenovo G40-45 (Modelo 80E1 / S/N: PF08GLTR / MTM: 80E1005RLM). Equipado con procesador AMD A4, pantalla panorámica de 14.0 pulgadas HD, tarjeta gráfica AMD Radeon integrada y cargador original Lenovo de 20V 3.25A. Diseño portátil y resistente con teclado ergonómico AccuType, puertos HDMI, VGA, USB 3.0 SuperSpeed, lector de tarjetas SD y red Ethernet.",
     features: [
-      "Sensor principal de 200 MP + Telefoto Periscopio 100x zoom",
-      "Procesador Qualcomm Snapdragon 8 Gen 3 con IA integrada",
-      "Pantalla Dynamic AMOLED 2X 120Hz con Gorilla Glass Armor",
-      "Carga ultrarrápida 120W (0% a 100% en solo 18 minutos)",
-      "Resistencia al agua y polvo IP68"
+      "Modelo Oficial Lenovo G40-45 (Type 80E1 / S/N: PF08GLTR / MTM: 80E1005RLM)",
+      "Procesador AMD A4 APU de alta eficiencia con gráficos Radeon integrados",
+      "Incluye Adaptador de Corriente / Cargador Original Lenovo (20V ⎓ 3.25A)",
+      "Pantalla Slim de 14.0 pulgadas HD (1366x768) panorámica con acabado brillante",
+      "Teclado ergonómico Lenovo AccuType para escritura fluida y ágil + Touchpad multitáctil",
+      "Conectividad Completa: 1x HDMI + 1x VGA D-Sub + 1x USB 3.0 + 2x USB 2.0 + Lector Tarjetas SD + LAN RJ-45 + Audio 3.5mm"
     ],
     colors: [
-      { name: "Azul Cobalto", hex: "#1e3a8a" },
-      { name: "Titanio Natural", hex: "#9ca3af" }
+      { name: "Negro Lenovo Textured", hex: "#18181b" }
     ],
     images: [
-      "images/phone-nexus-ultra/foto1.png",
-      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1000&q=80",
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=80"
+      "images/laptop-lenovo-g40-45/foto1.png",
+      "images/laptop-lenovo-g40-45/foto2.png",
+      "images/laptop-lenovo-g40-45/foto3.png"
     ]
   }
 ];
