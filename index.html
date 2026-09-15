@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexusTech | Catálogo Minimalista de Tecnología & WhatsApp</title>
+  <meta name="description" content="Catálogo de productos tecnológicos elegante y minimalista. Explora fotografías de alta calidad y solicita asesoría o compras por WhatsApp.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Minimalist Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR / HEADER -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="brand-logo">
+        <i class="fa-solid fa-cube"></i>
+        <div class="brand-title">NEXUS<span> / TECH</span></div>
+      </a>
+
+      <div class="nav-actions">
+        <button class="seller-phone-badge" id="openSettingsBtn" title="Configurar tu número de WhatsApp para ventas">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span id="activePhoneLabel">WA: +57 310 6739836</span>
+          <i class="fa-solid fa-sliders" style="margin-left: 4px; font-size: 0.75rem;"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-banner">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fa-solid fa-circle-dot"></i> Edición Minimalista 2026
+          </div>
+          <h1 class="hero-title">Tecnología Esencial, <br>Atención <span class="gradient-text">Directa.</span></h1>
+          <p class="hero-desc">Explora fotografías en alta resolución, detalles técnicos precisos y compra con un clic directamente por WhatsApp.</p>
+          
+          <div class="hero-cta-buttons">
+            <a href="#catalog" class="btn btn-primary">
+              <i class="fa-solid fa-arrow-down"></i> Ver Catálogo
+            </a>
+            <button class="btn btn-whatsapp" id="heroGeneralContactBtn">
+              <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+            </button>
+          </div>
+
+          <div class="hero-features">
+            <div class="hero-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Garantía Oficial Directa</span>
+            </div>
+            <div class="hero-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Envíos Nacionales</span>
+            </div>
+            <div class="hero-feature-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Atención 1 a 1</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-graphic">
+          <div class="hero-image-card">
+            <img src="images/laptop_pro_1.png" alt="Laptop Gamer Pro Tech">
+            <div class="hero-image-overlay">
+              <div style="font-weight: 700; color: #111; font-size: 0.9rem;">Zenith Studio Pro 16"</div>
+              <div style="color: #111; font-weight: 800; font-family: var(--font-mono); font-size: 1rem;">$1,399.00 USD</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTROLS & FILTER SECTION -->
+  <section class="controls-section" id="catalog">
+    <div class="container">
+      <div class="controls-card">
+        <!-- Search, Price Range and Sort Row -->
+        <div class="search-row">
+          <div class="search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por producto, procesador, cámara, código SKU..." autocomplete="off">
+            <!-- Autocomplete Suggestions Box -->
+            <div id="searchAutocompleteBox" class="autocomplete-dropdown"></div>
+          </div>
+          
+          <!-- Price Range Slider -->
+          <div class="price-filter-wrapper">
+            <div style="font-size: 0.75rem; font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: flex; justify-content: space-between;">
+              <span>Precio Máx:</span>
+              <span id="priceRangeLabel" style="color: var(--text-main); font-weight: 800;">$2,500 USD</span>
+            </div>
+            <input type="range" id="priceRangeInput" min="200" max="2500" step="50" value="2500" class="price-slider">
+          </div>
+
+          <select id="sortSelect" class="sort-select">
+            <option value="featured">Destacados primero</option>
+            <option value="price-asc">Precio: Menor a Mayor</option>
+            <option value="price-desc">Precio: Mayor a Menor</option>
+            <option value="rating">Mejor Calificados</option>
+          </select>
+
+          <button id="clearFiltersBtn" class="btn btn-outline btn-sm" title="Limpiar todos los filtros">
+            <i class="fa-solid fa-rotate-left"></i> Limpiar
+          </button>
+        </div>
+
+        <!-- Category Pills Filter -->
+        <div class="categories-row" id="categoriesContainer">
+          <button class="category-pill active" data-category="all">
+            <i class="fa-solid fa-border-all"></i> Todos
+          </button>
+          <button class="category-pill" data-category="laptops">
+            <i class="fa-solid fa-laptop"></i> Laptops
+          </button>
+          <button class="category-pill" data-category="smartphones">
+            <i class="fa-solid fa-mobile-screen-button"></i> Smartphones
+          </button>
+          <button class="category-pill" data-category="audio">
+            <i class="fa-solid fa-headphones"></i> Audio
+          </button>
+          <button class="category-pill" data-category="wearables">
+            <i class="fa-solid fa-stopwatch"></i> Wearables
+          </button>
+          <button class="category-pill" data-category="gaming">
+            <i class="fa-solid fa-gamepad"></i> Gaming
+          </button>
+          <button class="category-pill" data-category="camaras">
+            <i class="fa-solid fa-camera"></i> Cámaras & Drones
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS CATALOG GRID -->
+  <section class="products-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Colección de <span class="gradient-text">Productos</span></h2>
+        <div class="results-count" id="resultsCount">8 productos disponibles</div>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Dynamic Products Will Be Injected Here via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT DETAIL & MULTI-PHOTO GALLERY MODAL (LIGHTBOX) -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="closeModalBtn" title="Cerrar modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- LEFT COLUMN: PRODUCT & MULTI-PHOTO GALLERY -->
+      <div class="gallery-wrapper">
+        <div class="gallery-header-info">
+          <div style="font-size: 0.73rem; font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; color: var(--text-muted);">
+            <i class="fa-solid fa-camera"></i> Galería del Producto
+          </div>
+        </div>
+
+        <div class="gallery-main-view">
+          <img id="modalMainImage" src="" alt="Vista previa del producto">
+          <button class="gallery-nav-btn gallery-nav-prev" id="prevImageBtn" title="Imagen anterior">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="gallery-nav-btn gallery-nav-next" id="nextImageBtn" title="Imagen siguiente">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div>
+          <div style="font-size: 0.72rem; font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; color: var(--text-subtle); margin-bottom: 0.4rem;">
+            Vistas disponibles (Haz clic para cambiar):
+          </div>
+          <div class="gallery-thumbnails" id="modalThumbnails">
+            <!-- Thumbnails injected via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: DETAILED DESCRIPTION & WHATSAPP PURCHASE -->
+      <div class="modal-info">
+        <div class="product-header-block">
+          <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem; padding-right: 3.5rem;">
+            <div id="modalCategoryTag" style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted); font-weight: 700; text-transform: uppercase;"></div>
+            <div class="modal-stock-status">
+              <span class="modal-stock-dot"></span>
+              <span id="modalStockText">En Stock</span>
+            </div>
+          </div>
+
+          <h2 class="modal-title" id="modalTitle">Nombre del Producto</h2>
+        </div>
+
+        <!-- Price and SKU Box -->
+        <div class="modal-price-box">
+          <div>
+            <div style="font-size: 0.7rem; font-family: var(--font-mono); text-transform: uppercase; color: var(--text-subtle);">Precio Oficial:</div>
+            <div style="display: flex; align-items: baseline; gap: 0.6rem;">
+              <span class="modal-price" id="modalPrice">$0.00</span>
+              <span class="original-price" id="modalOriginalPrice"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Descriptive Paragraph -->
+        <div class="info-block">
+          <div class="info-block-title">
+            <i class="fa-solid fa-align-left"></i> Descripción del Producto
+          </div>
+          <p class="modal-desc" id="modalDescription"></p>
+        </div>
+
+        <!-- Color / Variant Selector -->
+        <div class="info-block">
+          <div class="info-block-title">
+            <i class="fa-solid fa-palette"></i> Color / Variante
+          </div>
+          <div class="color-options-grid" id="modalColorOptions">
+            <!-- Colors injected via JS -->
+          </div>
+        </div>
+
+        <!-- Technical Specifications Grid -->
+        <div class="info-block">
+          <div class="info-block-title">
+            <i class="fa-solid fa-list-check"></i> Especificaciones Clave
+          </div>
+          <ul class="features-list" id="modalFeaturesList">
+            <!-- Features injected via JS -->
+          </ul>
+        </div>
+
+        <!-- WhatsApp Message Preview -->
+        <div class="whatsapp-preview-box">
+          <div class="whatsapp-preview-title">
+            <i class="fa-brands fa-whatsapp"></i> Mensaje listo para enviar al vendedor:
+          </div>
+          <div id="modalWhatsappMessagePreview">
+            "¡Hola! Quisiera comprar este producto..."
+          </div>
+        </div>
+
+        <!-- BUY VIA WHATSAPP ACTION BUTTON -->
+        <button class="btn btn-whatsapp" id="modalBuyWhatsappBtn" style="width: 100%; padding: 0.95rem; font-size: 1rem;">
+          <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Quiero Comprar por WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELLER SETTINGS MODAL -->
+  <div class="modal-overlay" id="settingsModal">
+    <div class="modal-container settings-modal-card">
+      <button class="modal-close-btn" id="closeSettingsModalBtn">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="text-align: center;">
+        <i class="fa-brands fa-whatsapp" style="font-size: 2.5rem; color: #059669; margin-bottom: 0.5rem;"></i>
+        <h2>Número de Ventas WhatsApp</h2>
+        <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 0.4rem;">
+          Ingresa el teléfono donde recibirás los pedidos directos de tus compradores.
+        </p>
+      </div>
+
+      <div>
+        <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-main); text-transform: uppercase;">
+          Número Celular con Código de País (sin espacios ni guiones):
+        </label>
+        <input type="text" id="sellerPhoneInput" class="input-field" placeholder="Ej: 573106739836" value="573106739836">
+        <div style="font-size: 0.76rem; color: var(--text-subtle); margin-top: 0.4rem; font-family: var(--font-mono);">
+          * Ejemplo Colombia: 573001234567 | México: 525512345678
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem;">
+        <button class="btn btn-primary" id="savePhoneBtn" style="flex: 1;">
+          <i class="fa-solid fa-check"></i> Guardar Cambios
+        </button>
+        <button class="btn btn-outline" id="cancelSettingsBtn">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP CHAT BUTTON -->
+  <a href="#" class="floating-whatsapp-btn" id="floatingWhatsappBtn" title="Contacto directo WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1rem;">
+            <i class="fa-solid fa-cube"></i>
+            <div class="brand-title">NEXUS<span> / TECH</span></div>
+          </div>
+          <p>Catálogo minimalista especializado en productos tecnológicos de vanguardia. Asesoría y compras 1 a 1 mediante integración directa con WhatsApp.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog">Laptops & Workstations</a></li>
+            <li><a href="#catalog">Smartphones 5G</a></li>
+            <li><a href="#catalog">Audio Hi-Fi</a></li>
+            <li><a href="#catalog">Smartwatches</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Soporte & Ventas</h4>
+          <ul class="footer-links">
+            <li><a href="#" id="footerWhatsappLink"><i class="fa-brands fa-whatsapp"></i> Atencion en WhatsApp</a></li>
+            <li><a href="#"><i class="fa-solid fa-shield"></i> Política de Garantía</a></li>
+            <li><a href="#"><i class="fa-solid fa-truck"></i> Términos de Envío</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 NexusTech Catalog. Diseño Minimalista & Elegante.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
