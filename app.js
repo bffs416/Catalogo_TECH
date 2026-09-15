@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sellerPhone: '573106739836',
     selectedCategory: 'all',
     searchQuery: '',
-    maxPrice: 2500,
+    maxPrice: 1000000,
     sortOption: 'featured',
     activeProduct: null,
     activeImageIndex: 0,
@@ -65,6 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
   }
 
+  /* Helper to format currency in Colombian Pesos (COP) */
+  function formatPrice(amount) {
+    if (typeof amount !== 'number') return amount;
+    return `$${amount.toLocaleString('es-CO')} COP`;
+  }
+
   /* ==========================================================================
      ULTRA-AESTHETIC WHATSAPP FORMATTER
      ========================================================================== */
@@ -111,10 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
    * Generates a beautifully formatted WhatsApp Markdown message with product photo link
    */
   function buildAestheticWhatsappUrl(product, colorName) {
-    const cleanPrice = product.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const cleanPrice = formatPrice(product.price);
     const colorFormatted = colorName ? `🎨 *Color Elegido:* ${colorName}\n` : '';
     const discountText = product.originalPrice 
-      ? ` 🏷️ _(Precio anterior: ~$${product.originalPrice.toFixed(2)}~)_` 
+      ? ` 🏷️ _(Precio anterior: ~${formatPrice(product.originalPrice)}~)_` 
       : '';
     
     // Convert local relative image path to absolute URL or HTTP preview link
@@ -128,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `📌 *Producto:* ${product.name}\n` +
       `🏷️ *Categoría:* ${product.categoryLabel}\n` +
       `${colorFormatted}` +
-      `💵 *Precio:* *$${cleanPrice} USD*${discountText}\n` +
+      `💵 *Precio:* *${cleanPrice}*${discountText}\n` +
       `🔑 *Ref / SKU:* \`${product.sku}\` \n` +
       `⚡ *Disponibilidad:* ${product.stock}\n` +
       `🖼️ *Foto del Producto:* ${mainPhotoUrl}\n` +
@@ -198,18 +204,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     productsGrid.innerHTML = filtered.map(product => {
+      const isSold = product.badge === 'VENDIDO' || (product.stock && product.stock.includes('AGOTADO'));
       const badgeClass = getBadgeClass(product.badge);
       const originalPriceHtml = product.originalPrice 
-        ? `<span class="original-price">$${product.originalPrice.toFixed(2)}</span>` 
+        ? `<span class="original-price">${formatPrice(product.originalPrice)}</span>` 
         : '';
       
       const mainImg = product.images[0] || '';
       const photoCount = product.images.length;
 
       return `
-        <div class="product-card">
+        <div class="product-card ${isSold ? 'product-card-sold' : ''}">
           <div class="product-media" onclick="openProductModal('${product.id}')">
             <span class="product-badge ${badgeClass}">${product.badge || 'Nuevo'}</span>
+            ${isSold ? `
+              <div class="sold-out-overlay">
+                <div class="sold-out-stamp">
+                  <i class="fa-solid fa-ban"></i> VENDIDO
+                </div>
+              </div>
+            ` : ''}
             <div class="photo-count-pill">
               <i class="fa-solid fa-camera"></i> ${photoCount} fotos
             </div>
@@ -232,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <div class="product-footer">
               <div class="price-container">
-                <span class="current-price">$${product.price.toFixed(2)}</span>
+                <span class="current-price" style="${isSold ? 'color: #9ca3af; text-decoration: line-through;' : ''}">${formatPrice(product.price)}</span>
                 ${originalPriceHtml}
               </div>
 
@@ -240,8 +254,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="btn btn-outline btn-sm" onclick="openProductModal('${product.id}')">
                   <i class="fa-solid fa-layer-group"></i> Detalle
                 </button>
-                <button class="btn btn-whatsapp btn-sm" onclick="quickBuyWhatsapp('${product.id}')" title="Comprar por WhatsApp">
-                  <i class="fa-brands fa-whatsapp"></i> Comprar
+                <button class="btn ${isSold ? 'btn-outline' : 'btn-whatsapp'} btn-sm" onclick="${isSold ? `openProductModal('${product.id}')` : `quickBuyWhatsapp('${product.id}')`}" title="${isSold ? 'Producto Vendido' : 'Comprar por WhatsApp'}">
+                  <i class="fa-solid ${isSold ? 'fa-ban' : 'fa-brands fa-whatsapp'}"></i> ${isSold ? 'Vendido' : 'Comprar'}
                 </button>
               </div>
             </div>
@@ -332,11 +346,17 @@ document.addEventListener('DOMContentLoaded', () => {
     state.selectedColor = product.colors && product.colors.length > 0 ? product.colors[0] : null;
 
     // Populate Details
+    const isSold = product.badge === 'VENDIDO' || (product.stock && product.stock.includes('AGOTADO'));
+    const modalSoldOverlay = document.getElementById('modalSoldOverlay');
+    if (modalSoldOverlay) {
+      modalSoldOverlay.style.display = isSold ? 'flex' : 'none';
+    }
+
     modalTitle.textContent = product.name;
     modalCategoryTag.textContent = product.categoryLabel;
     modalStockText.textContent = product.stock;
-    modalPrice.textContent = `$${product.price.toFixed(2)}`;
-    modalOriginalPrice.textContent = product.originalPrice ? `$${product.originalPrice.toFixed(2)}` : '';
+    modalPrice.textContent = formatPrice(product.price);
+    modalOriginalPrice.textContent = product.originalPrice ? formatPrice(product.originalPrice) : '';
     modalDescription.textContent = product.description;
 
     // Features List
@@ -414,12 +434,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!state.activeProduct) return;
     const colorName = state.selectedColor ? state.selectedColor.name : '';
     const product = state.activeProduct;
-    const cleanPrice = product.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const cleanPrice = formatPrice(product.price);
     
     // Web Preview HTML (Clean Human-Readable Formatting)
     const colorLine = colorName ? `<div>🎨 <strong>Color Elegido:</strong> ${colorName}</div>` : '';
     const discountLine = product.originalPrice 
-      ? `<span style="font-size: 0.75rem; color: #047857; margin-left: 4px;">(Antes: $${product.originalPrice.toFixed(2)})</span>` 
+      ? `<span style="font-size: 0.75rem; color: #047857; margin-left: 4px;">(Antes: ${formatPrice(product.originalPrice)})</span>` 
       : '';
 
     const mainPhotoUrl = product.images[0].startsWith('http') 
@@ -432,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `  <div>📌 <strong>Producto:</strong> ${product.name}</div>` +
       `  <div>🏷️ <strong>Categoría:</strong> ${product.categoryLabel}</div>` +
       `  ${colorLine}` +
-      `  <div>💵 <strong>Precio:</strong> <span style="color: #047857; font-weight: 800; font-family: var(--font-mono);">$${cleanPrice} USD</span> ${discountLine}</div>` +
+      `  <div>💵 <strong>Precio:</strong> <span style="color: #047857; font-weight: 800; font-family: var(--font-mono);">${cleanPrice}</span> ${discountLine}</div>` +
       `  <div>🔑 <strong>Ref / SKU:</strong> <code style="background: #d1fae5; border: 1px solid #6ee7b7; padding: 1px 6px; border-radius: 4px; color: #065f46; font-family: var(--font-mono);">${product.sku}</code></div>` +
       `  <div>⚡ <strong>Disponibilidad:</strong> ${product.stock}</div>` +
       `  <div>🖼️ <strong>Foto del Producto:</strong> <a href="${mainPhotoUrl}" target="_blank" style="color: #047857; font-weight: 700;">Ver Imagen HD ↗</a></div>` +

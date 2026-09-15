@@ -613,6 +613,47 @@ h1, h2, h3, h4, h5 {
 .badge-sold { background: #ef4444; color: #ffffff; border-color: #111111; }
 .badge-default { background: #ffffff; color: #111; }
 
+/* Full Image Sold Out Overlay */
+.sold-out-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.72);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.sold-out-stamp {
+  background: #dc2626;
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  padding: 0.55rem 1.3rem;
+  border: 2.5px solid #ffffff;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 3px 3px 0px #111111;
+  transform: rotate(-9deg);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-sold-stamp {
+  font-size: 1.5rem;
+  padding: 0.75rem 1.8rem;
+  transform: rotate(-6deg);
+}
+
 .photo-count-pill {
   position: absolute;
   bottom: 0.75rem;
