@@ -913,20 +913,20 @@ h1, h2, h3, h4, h5 {
   width: 40px;
   height: 40px;
   border-radius: 6px;
-  background: #fef08a;
-  border: 1.5px solid #111111;
-  color: #111111;
+  background: #e6eeff;
+  border: 1.5px solid #0047bb;
+  color: #0047bb;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 3px 3px 0px #111111;
+  box-shadow: 3px 3px 0px #0047bb;
 }
 
 .gallery-nav-btn:hover {
-  background: #111111;
-  color: #fef08a;
+  background: #0047bb;
+  color: #ffffff;
   transform: translateY(-50%) translate(-2px, -2px);
 }
 
@@ -960,13 +960,13 @@ h1, h2, h3, h4, h5 {
 }
 
 .thumb-item:hover {
-  border-color: #111111;
+  border-color: #0047bb;
 }
 
 .thumb-item.active {
-  border-color: #111111;
+  border-color: #0047bb;
   border-width: 2px;
-  box-shadow: 4px 4px 0px #facc15;
+  box-shadow: 3px 3px 0px #0047bb;
 }
 
 /* Right Column: Structured Product Information */
@@ -981,28 +981,28 @@ h1, h2, h3, h4, h5 {
   align-items: center;
   gap: 0.4rem;
   font-size: 0.75rem;
-  color: #111111;
+  color: #0047bb;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background: #fef08a;
-  border: 1.5px solid #111111;
+  background: #e6eeff;
+  border: 1.5px solid #0047bb;
   padding: 0.25rem 0.65rem;
   border-radius: 4px;
-  box-shadow: 2px 2px 0px #111111;
+  box-shadow: 2px 2px 0px #0047bb;
 }
 
 .modal-stock-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #111111;
+  background: #0047bb;
 }
 
 .modal-title {
   font-size: 1.85rem;
   font-weight: 800;
-  color: #111111;
+  color: #0f172a;
   line-height: 1.2;
 }
 
@@ -1010,18 +1010,18 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  background: #fef08a;
+  background: #e6eeff;
   padding: 0.85rem 1.1rem;
   border-radius: 6px;
-  border: 2px solid #111111;
-  box-shadow: 4px 4px 0px #111111;
+  border: 2px solid #0047bb;
+  box-shadow: 4px 4px 0px #0047bb;
 }
 
 .modal-price {
   font-family: var(--font-mono);
   font-size: 2rem;
   font-weight: 800;
-  color: #111111;
+  color: #0047bb;
 }
 
 .modal-desc {
@@ -1313,12 +1313,12 @@ body {
 
 .brand-logo i {
   font-size: 1.6rem;
-  color: var(--text-main);
-  background: #fef08a;
-  border: 1.5px solid #111111;
+  color: #ffffff;
+  background: #0047bb;
+  border: 1.5px solid #0047bb;
   padding: 0.3rem 0.5rem;
   border-radius: 6px;
-  box-shadow: 2px 2px 0px #111111;
+  box-shadow: 2px 2px 0px #0f172a;
 }
 
 .seller-phone-badge {
@@ -1338,9 +1338,11 @@ body {
 }
 
 .seller-phone-badge:hover {
-  background: #fef08a;
+  background: #0047bb;
+  color: #ffffff;
+  border-color: #0047bb;
   transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0px #111111;
+  box-shadow: 4px 4px 0px #0f172a;
 }
 
 /* Category Pills Navigation Effects */
@@ -1362,19 +1364,22 @@ body {
 }
 
 .category-pill:hover {
-  background: #fef08a;
+  background: #e6eeff;
+  border-color: #0047bb;
+  color: #0047bb;
   transform: translateY(-2px);
-  box-shadow: 3px 3px 0px #111111;
+  box-shadow: 3px 3px 0px #0047bb;
 }
 
 .category-pill.active {
-  background: var(--border-black);
+  background: #0047bb;
   color: #ffffff;
-  box-shadow: 3px 3px 0px #facc15;
+  border-color: #0047bb;
+  box-shadow: 3px 3px 0px #0f172a;
 }
 
 .category-pill.active i {
-  color: #fde047;
+  color: #ffffff;
 }
 
 /* ==========================================================================
