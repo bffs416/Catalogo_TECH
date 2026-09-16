@@ -238,6 +238,61 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Nav Actions */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.facebook-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: #ffffff;
+  border: 1.5px solid var(--border-black);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.facebook-badge i.fa-facebook {
+  color: #1877f2;
+  font-size: 1rem;
+}
+
+.facebook-badge:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  color: #ffffff;
+}
+
+.facebook-badge:hover i.fa-facebook {
+  color: #ffffff;
+}
+
+.btn-facebook {
+  background: #1877f2;
+  color: #ffffff;
+  border-color: #1877f2;
+}
+
+.btn-facebook i {
+  color: #ffffff;
+}
+
+.btn-facebook:hover {
+  background: #166fe5;
+  border-color: #166fe5;
+  color: #ffffff;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px #0f172a;
+}
+
 .seller-phone-badge {
   display: flex;
   align-items: center;
