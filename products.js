@@ -101,7 +101,8 @@ const PRODUCTS_DATA = [
     ],
     images: [
       "images/memoria-ram-2gb-laptop-ddr3/foto1.jpg",
-      "images/memoria-ram-2gb-laptop-ddr3/foto2.jpg"
+      "images/memoria-ram-2gb-laptop-ddr3/foto2.jpg",
+      "images/memoria-ram-2gb-laptop-ddr3/foto3.jpg"
     ]
   },
   {
