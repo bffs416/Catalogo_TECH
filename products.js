@@ -4,6 +4,41 @@
 
 const PRODUCTS_DATA = [
   {
+    id: "aio-lenovo-c260",
+    name: "Computador Todo en Uno Lenovo C260 Pantalla 19.5\" HD + HDMI + Cámara",
+    category: "computadores",
+    categoryLabel: "Computadores & Laptops",
+    price: 150000,
+    originalPrice: 220000,
+    badge: "USADO - EXCELENTE ESTADO",
+    condition: "USADO",
+    conditionLabel: "Usado (Excelente Estado - 100% Funcional)",
+    stock: "En Stock (Envío Inmediato)",
+    sku: "LNV-AIO-C260-10160",
+    rating: 5.0,
+    reviewsCount: 20,
+    shortSpecs: ["Usado (Excelente Estado)", "Pantalla 19.5\" HD LED", "Salida HDMI + LAN Gigabit", "Webcam HD + Parlantes Estéreo"],
+    description: "Computador Todo en Uno (All-in-One) Lenovo C260 (Modelo 10160 / MTM: 57321289 / S/N: CB38290161). Equipo USADO en excelente estado estético y 100% operativo. Diseño elegante 'All-in-One' todo integrado en la pantalla de 19.5 pulgadas panorámica HD. Cuenta con salida HDMI para conectar monitor secundario o TV, red Ethernet Gigabit, puertos USB, altavoces estéreo integrados y cámara web HD.",
+    features: [
+      "ESTADO: USADO (Excelente Estado - 100% Funcional y Verificado)",
+      "Super Precio: $150.000 COP",
+      "Modelo Oficial Lenovo C260 (Machine Type: 10160 / MTM: 57321289 / S/N: CB38290161)",
+      "Pantalla Panorámica LED HD de 19.5 Pulgadas integrada sin cables desordenados",
+      "Conectividad de Vídeo: Puerto HDMI Out para monitor o televisor secundario",
+      "Puertos USB, Red Gigabit Ethernet RJ-45, Audio HD y Lector de tarjetas integrados",
+      "Cámara Web HD integrada + Micrófono + Parlantes Estéreo de excelente calidad sonora",
+      "Ideal para estudio, trabajo de oficina, caja registradora, recepción o navegación en internet"
+    ],
+    colors: [
+      { name: "Blanco Cream Lenovo", hex: "#f3f4f6" }
+    ],
+    images: [
+      "images/aio-lenovo-c260/foto1.png",
+      "images/aio-lenovo-c260/foto2.png",
+      "images/aio-lenovo-c260/foto3.jpg"
+    ]
+  },
+  {
     id: "sopladora-violent-fan",
     name: "Sopladora Turbo Inalámbrica 48V Brushless Violent Fan + 2 Baterías + Cargador",
     category: "accesorios",
