@@ -71,6 +71,40 @@ const PRODUCTS_DATA = [
     ]
   },
   {
+    id: "memoria-ram-2gb-laptop-ddr3",
+    name: "Memoria RAM 2GB DDR3 1333MHz SO-DIMM para Portátil (Samsung / Elpida)",
+    category: "almacenamiento",
+    categoryLabel: "Componentes, Discos & RAM",
+    price: 10000,
+    originalPrice: 25000,
+    badge: "USADO - EXCELENTE ESTADO",
+    condition: "USADO",
+    conditionLabel: "Usado (Excelente Estado - Probadas 100%)",
+    stock: "En Stock (Envío Inmediato)",
+    sku: "RAM-2GB-DDR3-SO-DIMM",
+    rating: 5.0,
+    reviewsCount: 18,
+    shortSpecs: ["Usado (Excelente Estado)", "Capacidad 2GB DDR3 SO-DIMM", "Frecuencia 1333MHz / PC3-10600S", "Samsung / Elpida Original"],
+    description: "Módulos de memoria RAM de 2GB DDR3 a 1333MHz (PC3-10600S) en formato SO-DIMM compacto de 204 pines para computadores portátiles y laptops. Equipos USADOS en excelente estado físico y 100% funcionales (probados con MemTest86 sin errores). Disponibles en marcas líderes como Samsung (M471B5773DH0-CH9) y Elpida. Ideales para mantenimiento, ampliación o repuesto de laptops.",
+    features: [
+      "ESTADO: USADO (Excelente Estado - 100% Funcional y Probado)",
+      "Super Oferta: $10.000 COP por unidad de 2GB",
+      "Capacidad: Módulos de 2GB individuales a 1333 MHz (PC3-10600S)",
+      "Formato: SO-DIMM de 204 Pines para Portátiles / Laptops",
+      "Marcas Líderes: Samsung Original (M471B5773DH0) y Elpida Japan",
+      "Compatible con Laptops HP, Lenovo, Dell, ASUS, Acer, Toshiba y Apple MacBook que soporten DDR3",
+      "Excelentes para repuesto, repotenciación económica o mantenimiento técnico"
+    ],
+    colors: [
+      { name: "Samsung Original 2GB ($10.000)", hex: "#047857" },
+      { name: "Elpida 2GB ($10.000)", hex: "#1d4ed8" }
+    ],
+    images: [
+      "images/memoria-ram-2gb-laptop-ddr3/foto1.jpg",
+      "images/memoria-ram-2gb-laptop-ddr3/foto2.jpg"
+    ]
+  },
+  {
     id: "radio-baofeng-bf888s",
     name: "Kit de Radios Walkie Talkie Baofeng BF-888S Completo",
     category: "accesorios",
