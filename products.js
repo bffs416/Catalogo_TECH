@@ -37,6 +37,40 @@ const PRODUCTS_DATA = [
     ]
   },
   {
+    id: "memoria-ram-8gb-ddr3",
+    name: "Memoria RAM 8GB DDR3 / DDR3L 1600MHz para PC de Escritorio (Kingston / SK Hynix / HP / XUE)",
+    category: "almacenamiento",
+    categoryLabel: "Componentes, Discos & RAM",
+    price: 70000,
+    originalPrice: 100000,
+    badge: "USADO - EXCELENTE ESTADO",
+    condition: "USADO",
+    conditionLabel: "Usado (Excelente Estado - Probadas 100%)",
+    stock: "En Stock (Envío Inmediato)",
+    sku: "RAM-8GB-DDR3-1600",
+    rating: 5.0,
+    reviewsCount: 22,
+    shortSpecs: ["Usado (Excelente Estado)", "Capacidad 8GB DDR3 / DDR3L", "Frecuencia 1600MHz PC3L-12800U", "Kingston / SK Hynix / HP / XUE"],
+    description: "Módulos de memoria RAM de 8GB DDR3 / DDR3L a 1600MHz (PC3L-12800U) para computadores de escritorio (PC Torre / SFF). Equipos USADOS en impecable estado estético y operativo, verificados al 100% con MemTest86 sin errores. Disponibles en marcas de primer nivel original como Kingston, SK Hynix (HP Original) y XUE. Voltaje dual 1.35V / 1.5V compatible con tarjetas madre Intel y AMD.",
+    features: [
+      "ESTADO: USADO (Excelente Estado - 100% Funcional y Probado con MemTest86)",
+      "Precio Oficial: $70.000 COP por unidad de 8GB",
+      "Capacidad: Módulos de 8GB individuales a 1600 MHz (PC3L-12800U / PC3-12800)",
+      "Formato: DIMM de 240 Pines para Chasis de Computador de Escritorio (Desktop PC)",
+      "Voltaje: Soporte Dual 1.35V (DDR3L Low Voltage) / 1.5V (DDR3 Estándar)",
+      "Marcas Certificadas: SK Hynix (HP P/N 898881-164), Kingston HyperX/ValueRAM y XUE",
+      "Compatible con Dual Channel en tarjetas madre Intel (LGA 1155, 1150) y AMD (AM3, AM3+)"
+    ],
+    colors: [
+      { name: "SK Hynix / HP Original 8GB ($70.000)", hex: "#1d4ed8" },
+      { name: "Kingston / XUE 8GB ($70.000)", hex: "#047857" }
+    ],
+    images: [
+      "images/memoria-ram-8gb-ddr3/foto1.png",
+      "images/memoria-ram-8gb-ddr3/foto2.jpg"
+    ]
+  },
+  {
     id: "radio-baofeng-bf888s",
     name: "Kit de Radios Walkie Talkie Baofeng BF-888S Completo",
     category: "accesorios",
