@@ -4,6 +4,68 @@
 
 const PRODUCTS_DATA = [
   {
+    id: "disco-duro-1tb-laptop",
+    name: "Disco Duro 1TB Western Digital 2.5\" SATA para Portátil (WD Black / Blue)",
+    category: "almacenamiento",
+    categoryLabel: "Almacenamiento & Discos",
+    price: 80000,
+    originalPrice: 120000,
+    badge: "Destacado",
+    stock: "En Stock (Envío Inmediato)",
+    sku: "HDD-2.5-1TB-LNV",
+    rating: 5.0,
+    reviewsCount: 25,
+    shortSpecs: ["1TB (1000GB) Capacidad", "Formato Slim 2.5\" Portátil", "WD Black 7200 RPM / WD Blue 5400 RPM", "SATA 6Gb/s Lenovo Certified"],
+    description: "Discos duros mecánicos Western Digital de 1TB (1000GB) en formato Slim de 2.5 pulgadas diseñados para computadores portátiles y consolas. Disponibles en versiones WD Black de alto rendimiento a 7200 RPM (WD10SPSX) y WD Blue silencioso a 5400 RPM (WD10SPZX). Certificados original Lenovo / WD, en impecable estado técnico.",
+    features: [
+      "Precio Oficial: $80.000 COP por unidad",
+      "Capacidad: 1 Terabyte (1000 GB) en formato 2.5\" Slim para Laptops",
+      "Versión WD Black 7200 RPM (Modelo WD10SPSX-08A6WT0 / Rendimiento Máximo)",
+      "Versión WD Blue 5400 RPM (Modelo WD10SPZX-08Z10T1 / Eficiencia y Bajo Consumo)",
+      "Interfaz de conexión SATA III @ 6Gb/s con tasa de transferencia ultra constante",
+      "Compatible con Laptops Lenovo, HP, Dell, ASUS, Acer, Apple MacBook y consolas PS3 / PS4 / Cajas externas USB",
+      "Verificados con salud al 100% y cero sectores defectuosos"
+    ],
+    colors: [
+      { name: "WD Black 7200 RPM ($80.000)", hex: "#18181b" },
+      { name: "WD Blue 5400 RPM ($80.000)", hex: "#2563eb" }
+    ],
+    images: [
+      "images/disco-duro-1tb-laptop/foto1.jpg"
+    ]
+  },
+  {
+    id: "disco-duro-1tb-pc",
+    name: "Disco Duro 1TB SATA 3.5\" para PC de Escritorio (WD / Toshiba / Seagate)",
+    category: "almacenamiento",
+    categoryLabel: "Almacenamiento & Discos",
+    price: 90000,
+    originalPrice: 130000,
+    badge: "Destacado",
+    stock: "En Stock (Envío Inmediato)",
+    sku: "HDD-3.5-1TB-PC",
+    rating: 5.0,
+    reviewsCount: 19,
+    shortSpecs: ["1TB (1000GB) Capacidad", "Formato 3.5\" PC Torre", "SATA 6Gb/s 7200/5400 RPM", "WD / Toshiba / Seagate"],
+    description: "Discos duros mecánicos de 1TB (1000GB) de capacidad en formato de 3.5 pulgadas para computadores de escritorio (PC Torre / SFF). Disponibles en marcas líderes como Western Digital (WD Blue), Toshiba y Seagate Barracuda. Probados al 100% en salud con CrystalDiskInfo, ideales para almacenamiento masivo de archivos, juegos, respaldos y sistemas operativos.",
+    features: [
+      "Precio Oficial: $90.000 COP por unidad",
+      "Capacidad de Almacenamiento: 1 Terabyte (1.000 GB reales)",
+      "Formato estándar de 3.5 Pulgadas para Chasis de Computador de Escritorio (PC)",
+      "Interfaz de alta velocidad SATA III @ 6Gb/s (Retrocompatible con SATA II)",
+      "Salud comprobada al 100% sin sectores defectuosos (CrystalDiskInfo / HD Tune)",
+      "Marcas reconocidas: Western Digital WD Blue (WD10EZEX), Toshiba, Seagate Barracuda",
+      "Garantía directa y envío inmediato a nivel nacional"
+    ],
+    colors: [
+      { name: "WD Blue 3.5\" PC ($90.000)", hex: "#1d4ed8" },
+      { name: "Seagate / Toshiba 3.5\" PC ($90.000)", hex: "#047857" }
+    ],
+    images: [
+      "images/disco-duro-1tb-pc/foto1.jpg"
+    ]
+  },
+  {
     id: "docking-hp-120w",
     name: "Docking Station HP Thunderbolt USB-C + Cargador 120W",
     category: "dockings",
