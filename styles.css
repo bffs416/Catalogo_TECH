@@ -677,13 +677,17 @@ h1, h2, h3, h4, h5 {
   border: 1.5px solid #111111;
   z-index: 2;
   box-shadow: 2px 2px 0px #111111;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
+.badge-new { background: #059669; color: #ffffff; border-color: #047857; }
+.badge-used { background: #ffffff; color: #0f172a; border-color: #0f172a; }
 .badge-featured { background: #0047bb; color: #ffffff; border-color: #0047bb; }
 .badge-offer { background: #25d366; color: #ffffff; border-color: #0f172a; }
-.badge-new { background: #e6eeff; color: #0047bb; border-color: #0047bb; }
 .badge-sold { background: #ef4444; color: #ffffff; border-color: #111111; }
-.badge-default { background: #ffffff; color: #111; }
+.badge-default { background: #ffffff; color: #111111; border-color: #111111; }
 
 /* Full Image Sold Out Overlay */
 .sold-out-overlay {

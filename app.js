@@ -206,6 +206,12 @@ document.addEventListener('DOMContentLoaded', () => {
     productsGrid.innerHTML = filtered.map(product => {
       const isSold = product.badge === 'VENDIDO' || (product.stock && product.stock.includes('AGOTADO'));
       const badgeClass = getBadgeClass(product.badge);
+      
+      let badgeIcon = '<i class="fa-solid fa-tag"></i>';
+      if (product.badge && product.badge.includes('NUEVO')) badgeIcon = '<i class="fa-solid fa-sparkles"></i>';
+      else if (product.badge && product.badge.includes('USADO')) badgeIcon = '<i class="fa-solid fa-shield-check"></i>';
+      else if (product.badge && product.badge.includes('VENDIDO')) badgeIcon = '<i class="fa-solid fa-ban"></i>';
+
       const originalPriceHtml = product.originalPrice 
         ? `<span class="original-price">${formatPrice(product.originalPrice)}</span>` 
         : '';
@@ -216,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return `
         <div class="product-card ${isSold ? 'product-card-sold' : ''}">
           <div class="product-media" onclick="openProductModal('${product.id}')">
-            <span class="product-badge ${badgeClass}">${product.badge || 'Nuevo'}</span>
+            <span class="product-badge ${badgeClass}">${badgeIcon} ${product.badge || 'Nuevo'}</span>
             ${isSold ? `
               <div class="sold-out-overlay">
                 <div class="sold-out-stamp">
@@ -327,9 +333,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!badge) return 'badge-default';
     const b = badge.toLowerCase();
     if (b.includes('vendido') || b.includes('agotado')) return 'badge-sold';
+    if (b.includes('nuevo')) return 'badge-new';
+    if (b.includes('usado')) return 'badge-used';
     if (b.includes('destacado')) return 'badge-featured';
     if (b.includes('oferta')) return 'badge-offer';
-    if (b.includes('nuevo')) return 'badge-new';
     return 'badge-default';
   }
 
