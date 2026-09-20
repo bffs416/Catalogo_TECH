@@ -354,17 +354,17 @@ const PRODUCTS_DATA = [
     categoryLabel: "Computadores & Laptops",
     price: 400000,
     originalPrice: 500000,
-    badge: "USADO - EXCELENTE ESTADO",
+    badge: "VENDIDO",
     condition: "USADO",
-    conditionLabel: "Usado (Excelente Estado)",
-    stock: "En Stock (Envío Inmediato)",
+    conditionLabel: "Usado (Vendido)",
+    stock: "AGOTADO (Vendido)",
     sku: "LNV-TC-SFF-A8-9600",
     rating: 5.0,
     reviewsCount: 28,
-    shortSpecs: ["Usado (Excelente Estado)", "AMD PRO A8-9600 3.10GHz", "8GB RAM DDR4", "256GB SSD Sólido"],
+    shortSpecs: ["Usado (VENDIDO)", "AMD PRO A8-9600 3.10GHz", "8GB RAM DDR4", "256GB SSD Sólido"],
     description: "Computador de escritorio torre formato SFF Lenovo ThinkCentre de alto rendimiento corporativo. Equipo USADO en excelente condición física y funcional. Equipado con procesador AMD PRO A8-9600 (10 Compute Cores 4C+6G @ 3.10GHz), 8GB de memoria RAM DDR4 a 2400 MT/s, tarjeta de vídeo integrada AMD Radeon R7 Graphics (998 MB) y disco de estado sólido SSD de 256GB para velocidad extrema. Excelente conectividad con doble salida digital DisplayPort 4K, VGA, puerto serial COM, 8 puertos USB totales y red Gigabit Ethernet.",
     features: [
-      "ESTADO: USADO (Excelente Estado - 100% Funcional y Verificado)",
+      "ESTADO: USADO (Excelente Estado - Producto VENDIDO)",
       "Procesador AMD PRO A8-9600 R7 (10 Compute Cores: 4 CPU + 6 GPU @ 3.10GHz Turbo)",
       "Memoria RAM instalada de 8GB DDR4 a 2400 MT/s de alta velocidad",
       "Unidad de Almacenamiento SSD de 256GB (Disco de Estado Sólido SATA de encendido ultra rápido)",
@@ -381,6 +381,40 @@ const PRODUCTS_DATA = [
       "images/pc-lenovo-thinkcentre-a8/foto2.png",
       "images/pc-lenovo-thinkcentre-a8/foto3.png",
       "images/pc-lenovo-thinkcentre-a8/foto4.png"
+    ]
+  },
+  {
+    id: "disco-duro-externo-320gb",
+    name: "Disco Duro Externo Portátil 320GB USB 3.0 (Salud 100% Perfecta)",
+    category: "almacenamiento",
+    categoryLabel: "Componentes, Discos & RAM",
+    price: 50000,
+    originalPrice: 80000,
+    badge: "USADO - EXCELENTE ESTADO",
+    condition: "USADO",
+    conditionLabel: "Usado (Excelente Estado - 100% Salud)",
+    stock: "En Stock (Envío Inmediato)",
+    sku: "HDD-EXT-320GB-USB3",
+    rating: 5.0,
+    reviewsCount: 15,
+    shortSpecs: ["Usado (Excelente Estado)", "Capacidad 320GB Portátil", "Conexión USB 3.0 SuperSpeed", "Salud 100% Perfecta (HDD Sentinel)"],
+    description: "Disco duro externo portátil de 320GB en cofre protector ultra resistente de 2.5 pulgadas con interfaz USB 3.0 SuperSpeed de alta velocidad. Equipo USADO en excelente estado estético y 100% verificado con el software Hard Disk Sentinel (Salud 100% Perfecta, sin sectores defectuosos). Incluye cable USB 3.0 original de alta calidad. Plug & Play compatible con Windows, Mac, Linux, Smart TVs y consolas.",
+    features: [
+      "ESTADO: USADO (Excelente Estado - Salud 100% Perfecta en Hard Disk Sentinel)",
+      "Precio Oferta: $50.000 COP",
+      "Capacidad: 320 GB de almacenamiento portátil de alta velocidad",
+      "Interfaz USB 3.0 SuperSpeed de transferencia ultra rápida de datos",
+      "Incluye Cable de Conexión USB 3.0 Original de alta resistencia",
+      "Caja externa portátil compacta de 2.5\" resistente a impactos y fácil de transportar",
+      "Compatible Plug & Play con Laptops, PCs, Mac, Smart TV, PS4, Xbox y decodificadores"
+    ],
+    colors: [
+      { name: "Negro Mate USB 3.0 ($50.000)", hex: "#18181b" }
+    ],
+    images: [
+      "images/disco-duro-externo-320gb/foto1.jpg",
+      "images/disco-duro-externo-320gb/foto2.jpg",
+      "images/disco-duro-externo-320gb/foto3.jpg"
     ]
   },
   {
